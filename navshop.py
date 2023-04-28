@@ -1,3 +1,4 @@
+#네이버 실시간 인기 쇼핑 키워드 크롤링하는 프로그램
 import requests
 from bs4 import BeautifulSoup
 import json
