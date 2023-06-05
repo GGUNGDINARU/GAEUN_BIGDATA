@@ -51,3 +51,18 @@ for popular_kw in popular_kws:
     rank = popular_kw['rank'] #순위
     real_kw = popular_kw['exposeKeyword'] #키워드
     print(str(rank) + '순위 키워드 : ' + str(real_kw))
+
+import openpyxl
+
+# 엑셀 파일 생성
+workbook = openpyxl.Workbook()
+sheet = workbook.active
+
+# 데이터 저장
+for popular_kw in popular_kws:
+    rank = popular_kw['rank']  # 순위
+    real_kw = popular_kw['exposeKeyword']  # 키워드
+    sheet.append([rank, real_kw])
+
+# XLSX 파일 저장
+workbook.save('검색결과.xlsx')
